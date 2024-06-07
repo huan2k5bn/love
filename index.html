@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lựa Chọn</title>
+    <link rel="stylesheet" href="./css/ind.css">
+</head>
+<body>
+    <section>
+        <div class="main">
+            <div class="a1">
+                <h1>Em ơi đi chơi với anh khum HeHe-))</h1>
+            </div>
+            <div class="a2">
+                <button id="agreeButton">Đồng Ý</button>
+                <button id="disagreeButton">Không Đồng Ý</button>
+            </div>
+            <div class="a3">
+                <img src="./images/huandz.jpg" alt="Image">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const disagreeButton = document.getElementById('disagreeButton');
+        const agreeButton = document.getElementById('agreeButton');
+
+        agreeButton.addEventListener('click', function() {
+            window.location.href = 'abc.html'; // Chuyển hướng sang trang abc.html
+        });
+
+        disagreeButton.addEventListener('click', function() {
+            const maxX = window.innerWidth - disagreeButton.offsetWidth;
+            const maxY = window.innerHeight - disagreeButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            disagreeButton.style.position = 'absolute';
+            disagreeButton.style.left = randomX + 'px';
+            disagreeButton.style.top = randomY + 'px';
+        });
+        
+    </script>
+</body>
+</html>
